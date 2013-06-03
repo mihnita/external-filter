@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+    <extension point="org.eclipse.ui.menus">
+        <menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+            <menu id="ExternalFilter.menus.filterMenu" label="Filter" mnemonic="F" />
+        </menuContribution>
+        <menuContribution locationURI="menu:ExternalFilter.menus.filterMenu">
+            <dynamic id="mnita.externalfilter.efDynamicMenu"
+                class="mnita.externalfilter.contributions.EFToolsDynamicMenu" />
+        </menuContribution>
+    </extension>
+
+    <extension point="org.eclipse.ui.preferencePages">
+        <page id="Externalfilter.preferences.ExternalFilterPreferencePage"
+            name="External Filter"
+            class="mnita.externalfilter.preferences.EFPreferencePage" />
+    </extension>
+
+</plugin>

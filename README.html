@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>External Filter for Eclipse</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body id="body">
+
+<h1>External Filter for Eclipse</h1>
+
+http://www.mihai-nita.net/eclipse/
+<p>This is a plugin that allows you to take text content from an Eclipse document, process it through an external tool,
+and the make the result available in Eclipse at the end (see the <a href="#features">Features</a> section for complete info).<br />
+The text is “feed” to the tool as standard input and the standard output becomes the result.</p>
+
+<p>This is something I have missed for a while, and I am amazed that there is nothing out there already. Or maybe it is, and I could not find it...</p>
+<p>So in a week-end or two I have put something together.
+Some  of the inspiration cames from <a href="http://projects.gnome.org/gedit/">gedit</a>.</p>
+
+<p>It should be able to run anything that you can normally execute on your machine (native applications, Perl/Python/shell scripts, Java, Groovy, etc.)</p>
+
+<p>
+<a href="ConfigDialog.jpg"><img width="498" src="ConfigDialog.jpg" /></a>
+<a href="SampleOutput.jpg"><img width="640" src="SampleOutput.jpg" /></a>
+</p>
+
+
+<h2>Installation</h2>
+
+<p>To install the plugin in Eclipse select Help -> Install New Software... and click “Add...” to add the following URL:<br/>
+http://www.mihai-nita.net/eclipse</p>
+
+<p>You can then select the site in the “Work with” list and continue the installation like with any other plugin.</p>
+
+<a name="features"></a>
+<h2>Features</h2>
+
+<p>The input text can be the whole content of a document, or the current selection selection.
+The result can be displayed in the Eclipse console, or a message box, in <span style="color: red">clipboard</span>,
+can replace the current selection, or the whole document, can be appended to the document or at the insertion point,
+or create a new document.</p>
+
+<p>This is what I would like to add to it, although it should be usable already:</p>
+<ul>
+  <li>Specify the charset for the input / output (right now it is UTF-8, but there might bee tools that can't handle it)</li>
+  <li>Allowing “replacement macros” in the command line (for things like document/project path, home folder, environment, Eclipse variables, prompt for input, etc.</li>
+  <li>The ability to include a short script in the tool configuration itself (so that you don't need an external script)</li>
+  <li>The ability to ask for a command to execute</li>
+  <li>Specify how to deal with standard-error (merge with standard input, ignore, take it <b>instead</b> of standard input, etc.</li>
+  <li>Handle nicely text from column selections.</li>
+  <li>Whatever cool ideas you might sugest :-)</li>
+</ul>
+
+
+<h2>Sources</h2>
+
+<p>On GitHub, at <a href="https://github.com/mihnita/ansi-econsole">https://github.com/mihnita/external-filter</a>.</p>
+
+
+<h2>License</h2>
+
+<p>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License.
+        
+<p>You may obtain a copy of the License at <a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+        
+<p>Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<br />
+See the License for the specific language governing permissions and
+limitations under the License.</p>
+
+</body>
+</html>
