@@ -2,12 +2,13 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: ExternalFilter
 Bundle-SymbolicName: net.mihai-nita.externalfilter.plugin;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.1.qualifier
 Bundle-Activator: mnita.externalfilter.EFActivator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: Mihai Nita
 Import-Package: org.eclipse.core.variables,
  org.eclipse.jface.text,
  org.eclipse.ui.console,
