@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="net.mihai-nita.externalfilter"
+      label="External Filter"
+      version="1.0.1.qualifier"
+      provider-name="Mihai Nita">
+
+   <description>
+      External Filters runs an extenral command, feeds the selected text as standard input, and uses the standard output as replacement.
+It can also pass the output to console, clipboard, or a message box.
+   </description>
+
+   <copyright url="http://www.mihai-nita.net">
+      Copyright 2013 Mihai Nita
+   </copyright>
+
+   <license url="http://www.apache.org/licenses/LICENSE-2.0">
+      Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+
+You may obtain a copy of the License at
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+   </license>
+
+   <url>
+      <update label="External Filter for Eclipse" url="http://www.mihai-nita.net/eclipse"/>
+      <discovery label="Info on this Eclipse plug-in" url="http://www.mihai-nita.net/eclipse"/>
+   </url>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.variables"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui.console"/>
+      <import plugin="org.eclipse.ui.editors"/>
+   </requires>
+
+   <plugin
+         id="net.mihai-nita.externalfilter.plugin"
+         download-size="36"
+         install-size="30"
+         version="1.0.1.qualifier"
+         unpack="false"/>
+
+</feature>
