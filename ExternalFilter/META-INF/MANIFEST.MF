@@ -13,3 +13,5 @@ Import-Package: org.eclipse.core.variables,
  org.eclipse.jface.text,
  org.eclipse.ui.console,
  org.eclipse.ui.texteditor
+Bundle-ClassPath: libs/commons-exec-1.3.jar,
+ .
