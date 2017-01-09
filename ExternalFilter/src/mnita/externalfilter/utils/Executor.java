@@ -1,13 +1,8 @@
 package mnita.externalfilter.utils;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.util.Map;
 
 import org.apache.commons.exec.CommandLine;
@@ -23,7 +18,6 @@ import org.apache.commons.exec.PumpStreamHandler;
  * - error reporting (colored output, message box instead of console)
  */
 public class Executor {
-	private final static String CHARSET = "utf-8"; 
 
     public static void execute(final ExternalCommand cmd) {
         try {
@@ -38,15 +32,15 @@ public class Executor {
             if (stdIn == null) {
                 streamHandler = new PumpStreamHandler(outputStream, errorStream);
             } else {
-                final ByteArrayInputStream inputStream = new ByteArrayInputStream(stdIn.getBytes(CHARSET));
+                final ByteArrayInputStream inputStream = new ByteArrayInputStream(stdIn.getBytes(cmd.getInputCharset()));
                 streamHandler = new PumpStreamHandler(outputStream, errorStream, inputStream);
             }
             exec.setStreamHandler(streamHandler);
 
             final Map<String, String> environment = System.getenv();
             cmd.exitCode = exec.execute(commandline, environment);
-            cmd.stdOut = outputStream.toString(CHARSET);
-            cmd.stdErr = errorStream.toString(CHARSET);
+            cmd.stdOut = outputStream.toString(cmd.getOutputCharset());
+            cmd.stdErr = errorStream.toString(cmd.getOutputCharset());
         } catch (final ExecuteException e) {
             cmd.exceptions.add(e.getMessage());
         } catch (final IOException e) {
