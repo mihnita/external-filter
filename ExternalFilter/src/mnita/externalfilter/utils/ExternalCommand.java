@@ -34,7 +34,7 @@ public class ExternalCommand {
         return stdErr;
     }
 
-    public List<String> getException() {
+    public List<String> getExceptions() {
         return exceptions;
     }
 

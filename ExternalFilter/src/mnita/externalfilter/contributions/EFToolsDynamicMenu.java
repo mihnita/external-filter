@@ -92,9 +92,9 @@ public class EFToolsDynamicMenu extends ContributionItem {
             EclipseEditorGetSet.outputToConsole(window, "=== EXIT CODE ===\n" + Integer.toString(cmd.getExitCode()));
         if (!cmd.getStdErr().isEmpty())
             EclipseEditorGetSet.outputToConsole(window, "=== STDERR ===\n" + cmd.getStdErr());
-        if (!cmd.getException().isEmpty()) {
+        if (!cmd.getExceptions().isEmpty()) {
             EclipseEditorGetSet.outputToConsole(window, "=== EXCEPTIONS ===\n");
-            for (String exception : cmd.getException())
+            for (String exception : cmd.getExceptions())
                 EclipseEditorGetSet.outputToConsole(window, exception + "\n");
         }
 
