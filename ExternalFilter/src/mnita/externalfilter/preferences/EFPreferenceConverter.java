@@ -27,6 +27,12 @@ public class EFPreferenceConverter {
                     result.name = kv[1];
                 else if ("command".equals(kv[0]))
                     result.command = kv[1];
+                else if ("inCharSet".equals(kv[0]))
+                    result.inputCharset = kv[1];
+                else if ("outCharSet".equals(kv[0]))
+                    result.outputCharset = kv[1];
+                else if ("workdir".equals(kv[0]))
+                    result.workDir = kv[1];
 //script                else if ("script".equals(kv[0]))
 //script                    result.script = kv[1];
                 else if ("inputMode".equals(kv[0]))
@@ -45,6 +51,12 @@ public class EFPreferenceConverter {
         sb.append("name").append(VALUE_SEPARATOR).append(tool.name);
         sb.append(FIELD_SEPARATOR);
         sb.append("command").append(VALUE_SEPARATOR).append(tool.command);
+        sb.append(FIELD_SEPARATOR);
+        sb.append("inCharSet").append(VALUE_SEPARATOR).append(tool.inputCharset);
+        sb.append(FIELD_SEPARATOR);
+        sb.append("outCharSet").append(VALUE_SEPARATOR).append(tool.outputCharset);
+        sb.append(FIELD_SEPARATOR);
+        sb.append("workdir").append(VALUE_SEPARATOR).append(tool.workDir);
         sb.append(FIELD_SEPARATOR);
 //script        sb.append("script").append(VALUE_SEPARATOR).append(tool.script);
 //script        sb.append(FIELD_SEPARATOR);
